@@ -1,0 +1,19 @@
+name: Samia
+on: [pull_request, push]
+jobs:
+ hello:
+  test:
+   runs-on: ubuntu-latest
+     steps:
+     - name: checkout code
+       uses: actions/checkout@v4
+
+     - name: setup node js
+       uses: actions/setup-node@v4
+       with:
+          node-version:'22.14'
+     - name: install dependencies
+       run: npm install
+
+     - name: run test
+       run: npm test
